@@ -113,13 +113,13 @@ def isLiteral(s: str) -> bool:
 
 
 def colorizedStderrPrint(s: str) -> None:
-    colored = colorize(s)
+    colored = colorize(s) if hasattr(sys.stderr, 'isatty') and sys.stderr.isatty() else s
     with supportTerminalColorsInWindows():
         stderr_print(colored)
 
 
 def colorizedStdoutPrint(s: str) -> None:
-    colored = colorize(s)
+    colored = colorize(s) if hasattr(sys.stdout, 'isatty') and sys.stdout.isatty() else s
     with supportTerminalColorsInWindows():
         print(colored)
 
