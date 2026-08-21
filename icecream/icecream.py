@@ -490,7 +490,7 @@ class IceCreamDebugger:
 
     def configureOutput(
         self: "IceCreamDebugger",
-        prefix: Union[str, Literal[Sentinel.absent]] = Sentinel.absent,
+        prefix: Union[str, Callable[[], str], Literal[Sentinel.absent]] = Sentinel.absent,
         outputFunction: Union[Callable, Literal[Sentinel.absent]] = Sentinel.absent,
         argToStringFunction: Union[Callable, Literal[Sentinel.absent]] = Sentinel.absent,
         includeContext: Union[bool, Literal[Sentinel.absent]] = Sentinel.absent,
